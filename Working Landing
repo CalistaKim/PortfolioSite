@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Calista Kim </title>
+    <link rel="stylesheet" href="css/animate.css">
+
+    <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <!-- Custom CSS -->
+    <link href="css/freelancer.css" rel="stylesheet">
+
+<!-- stylesheet containing fonts -->
+    <link rel="stylesheet" type="text/css" href="fonts/style.css"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+</head>
+    <body>
+    <section id = "landing" class="landing homeSlideTall2">
+<!--         CURTAIN START -->
+    <div class="bcg" 
+    data-center="background-position: 50% 0px;" 
+    data-bottom-top="background-position: 50% 100px;" 
+    data-top-bottom="background-position: 50% -200px;" 
+    data-anchor-target="#landing">
+        <div class="curtainContainer">
+            
+            <div class="curtain" 
+            data-bottom-top="opacity: 0" 
+            data-106-top="height: 1%; opacity: 0; top: -10%;" 
+            data-center="height: 100%; opacity: 0.5; top: 0%;" 
+            data-anchor-target="#landing">
+            </div>
+
+            <div class="copy" 
+            data-bottom-top="opacity: 0" 
+            data-280-top="opacity: 0;" 
+            data-106-top="opacity: 1;" 
+            data-anchor-target="#landing .copy">
+                <div class = "hsContainer">
+<!--                     <div class="hsContent" 
+                    data-center="opacity: 1" 
+                    data-106-top="opacity: 0" 
+                    data-anchor-target="#landing h2"> -->
+                    <div class = "row">
+                        <h2>Calista</h2>
+                            <div class = "col-sm-offset-3 col-sm-3 ">
+                                <p class="text-right" id= "subOne" >UX/UI</p>   
+                            </div> 
+                            <div class = "col-sm-6">
+                                <p class="text-left" id="subTwo" >Design/Develop</p>
+                            </div>
+<!--                     </div> -->
+                    </div>
+<!--                <object>
+                    <embed src ="images/calistaNew.svg" id = "signature" width = 30% 
+                    height = 30% >
+                </object> -->
+                </div> <!-- hsContainer end  -->
+            </div> <!-- "copy end" -->
+
+        </div> <!-- CURTAIN END -->
+    </div>
+    </section>
+            
+<!--             <section id="slide-5" class="homeSlide homeSlideTall2">
+                <div class="bcg">
+                    &nbsp;
+                </div>
+                <div class="bcg" 
+                data-bottom-top="opacity: 0;" 
+                data--33p-top="opacity: 0;" 
+                data--66p-top="opacity: 1;" 
+                data-anchor-target="#slide-5">
+                    <div class="hsContainer">
+                        <div class="hsContent" 
+                        data-bottom-top="opacity: 0;" 
+                        data-center="opacity: 1" 
+                        data-anchor-target="#slide-5">
+                            <h2 class="text-center">Portfolio</h2>
+                            <p class="text-center">Showcase your beautiful images before blurring the scene and fading in your headline.</p>
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+
+
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/cbpAnimatedHeader.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/freelancer.js"></script>
+    
+    <!-- skrollr pause  -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+        <script src="js/imagesloaded.js"></script>
+        <script src="js/skrollr.js"></script>
+        <script src="js/_main.js"></script>
+
+    </body>
+
+</html>
