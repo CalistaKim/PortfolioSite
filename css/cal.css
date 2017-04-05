@@ -1,0 +1,797 @@
+@font-face{
+	font-family: 'dinlight';
+	src: url('../fonts/dinlight.ttf');
+}
+@font-face{
+	font-family: 'mushin';
+	src: url('../fonts/mushin.otf');
+}
+
+p,span,h1,h2,h3,h4{
+	margin:0;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+h2,h3{
+	font-family:'dinlight', sans-serif;
+	color:#fff;
+	text-transform: uppercase; 
+	font-size:24px;
+	letter-spacing: 1.5px;
+}
+
+h2{
+	margin-bottom:10px;
+}
+h3{
+	font-size:18px;
+	display: inline-block;
+	margin: 25px 0;
+}
+p,span, li{
+	font-family:'dinlight', sans-serif;
+	font-weight: 100;
+	color:#fff;
+	font-size:16px;
+	line-height: 1.4em;
+}
+
+ul,li{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+.center{text-align: center;}
+#page {
+    width:100vw;
+    height:100vh;
+    overflow:hidden;
+    position: fixed;
+    top:0;
+    left:0;
+}
+
+// div {position:fixed;}
+
+.viewcontainer{
+	position:relative;
+	height:100vh;
+	// background: linear-gradient(to bottom, rgba(199,153,201,0.5) 0%,rgba(232,207,207,0.5) 97%,rgba(232,207,207,0.5) 100%);
+	background: linear-gradient(45deg, rgba(254,166,134,0.8) 0%,rgba(211,86,75,0.65) 100%); 
+}
+
+.bg {
+	width:100vw;
+	height:100vh;
+	position:fixed;
+}
+.hiding{
+	display: none;
+}
+
+.noscroll{
+	overflow:hidden;
+}
+.scroll{
+	overflow:auto;
+}
+.skipbtn{
+	font-family: 'dinlight', sans-serif;
+	font-size: 18px; 
+	letter-spacing: 1px;
+	color:#fff;
+	border:1px solid transparent;
+	padding:15px 30px;
+	position: absolute;
+	bottom:25px;
+	right:100px;
+	cursor:pointer;
+	opacity: 0.75;
+	transition:all 0.2s ease-in-out;
+}
+.skipbtn .fa{
+	position: relative;
+	top:0;
+	margin-left:10px;
+	transition:all 0.2s ease-in-out;
+}
+.skipbtn:hover{
+	opacity: 1;
+	// border:1px solid #ffcabd;
+	// color:#ffcabd;
+}
+.skipbtn:hover .fa{
+	top:3px;
+}
+
+/* -----------------------------------------------
+				SLIDE 1: intro
+------------------------------------------------ */
+.slideone{
+	background:#e8cfcf;
+}
+
+#startplanet{
+	background:url('../images/startplanet.png') center center / cover;
+	width: 120px;
+	height: 120px;
+	position: absolute;
+	left:10%;
+	top:180px;
+}
+#endplanet{
+	background:url('../images/endplanet.png') center center / cover;
+	width: 340px;
+	height: 340px;
+	position: absolute;
+	right:15%;
+	top:250px;
+	-webkit-filter: contrast(125%); 
+    filter: contrast(125%);
+}
+.spaceman{
+	background:url('../images/lilastro.png') center center / cover;
+	width:55px;
+	height:67px;
+	position: absolute;
+	left:18.5%;
+	top:133px;
+	z-index: 1;
+	animation-name:astrolanding;
+  	animation-duration:5s;
+	animation-fill-mode: forwards;
+}
+
+.flyingspaceship{
+	width:22px;
+	height:55px;
+	position: absolute;
+	background:url('../images/flying.gif') center center / cover;
+	left:13%;
+	top:110px;
+	animation-name:spaceshipfly;
+	animation-duration:6s;
+	animation-fill-mode: forwards;
+	z-index: 2;
+	animation-delay:1s;
+	-webkit-filter: contrast(125%); 
+    filter: contrast(125%);
+}
+.landedspaceship{
+	background:url('../images/landing_white.gif') center center / cover;
+	width: 50px;
+  	height:125px;
+	z-index: 2;
+	position: absolute;
+	left:70%;
+  	top:180px;
+  	animation-name:shiplanding;
+  	animation-duration:4s;
+	animation-fill-mode: forwards;
+	-webkit-filter: contrast(125%); 
+    filter: contrast(125%);
+}
+.spaceshipzoom{
+	animation-name:spaceshipzoom;
+  	animation-duration:3s;
+	animation-fill-mode: forwards;
+}
+.spaceshipbase{
+	background:url('../images/landed_white.gif') center center / cover;
+}
+.startplanetanim{
+	animation-name:planetmove;
+  	animation-duration:3s;
+	animation-fill-mode: forwards;
+}
+.endplanetanim{
+	animation-name:planetzoom;
+  	animation-duration:3s;
+	animation-fill-mode: forwards;
+}
+
+.namecontainer{
+	overflow:hidden;
+	position: absolute;
+	right:50px;
+	top:66px;
+	height: 71px;
+	width: 600px;
+	padding-top:12px;
+}
+.namecontainer.sub{
+	top:95px;
+	right:55px;
+}
+.nameanim{
+	animation-name:nameanim;
+  	animation-duration:2s;
+	animation-fill-mode: forwards;
+}
+.myname{
+	font-family:'dinlight', sans-serif;
+	font-size: 79px;
+	letter-spacing: 3px;
+	color:#fff;
+	position: relative;
+	top:130px;
+}
+.mysub{
+	font-family:'dinlight', sans-serif;
+	font-size:30px;
+	color:#fff;
+	letter-spacing: 2px;
+	font-weight: 100;
+	position: relative;
+	text-transform:none;
+	top:86px;
+	margin: 0 0 0 20px;
+}
+
+/* -----------------------------------------------
+			SLIDE 1.5 : hi my name is
+------------------------------------------------ */
+
+#ufo {
+	position:absolute;
+	left:24%;
+	top:50px;
+	height:0px;
+}
+
+#ufo.ufoanim{
+	animation-name:ufoanim;
+  	animation-duration:3s;
+	animation-fill-mode: forwards;
+}
+#ufo.ufofly{
+	animation-name:ufofly;
+  	animation-duration:3s;
+	animation-fill-mode: forwards;
+}
+.abducted{
+	animation-name:abducted;
+  	animation-duration:3s;
+	animation-fill-mode: forwards;
+}
+
+/* -----------------------------------------------
+			SLIDE 2: the actual portfolio
+------------------------------------------------ */
+#pagetwo{
+	overflow:hidden;
+}
+
+.slidetwo{
+	background:#e8cfcf;
+}
+#ufotwo{
+	position:absolute;
+	left:12%;
+	top:50px;
+	height:0px;
+}
+
+.browser{
+	height:50px;
+	width: auto;
+	position: absolute;
+	right:-10%;
+	top:0%;
+	transform:translate(-50%, -50%);
+	cursor:pointer;
+}
+.browseranim{
+	-webkit-animation-name:firefoxanim;
+	animation-name:firefoxanim;
+  	animation-duration:3s;
+	animation-fill-mode: forwards;
+}
+.browseranim:nth-child(2){
+	-webkit-animation-name:chromeanim;
+	animation-name:chromeanim;
+  	animation-duration:3s;
+	animation-fill-mode: forwards;
+}
+.pulse{
+	-webkit-animation-name: pulse;
+	animation-name: pulse;
+	animation-duration:6s;
+	animation-fill-mode: forwards;
+	animation-iteration-count: infinite;
+}
+#chrome.pulse{
+	top:50%;
+	right:60%;
+}
+#firefox.pulse {
+	top:50%;
+	right:38%;
+	-webkit-animation-name: pulse;
+	animation-name: pulse;
+	animation-duration:6.5s;
+	animation-fill-mode: forwards;
+	animation-iteration-count: infinite;
+}
+
+#chromewindow{
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	width: 0%;
+}
+#chromewindow.popin{
+	-webkit-animation-name: popin;
+	animation-name: popin;
+	animation-duration:1s;
+	animation-fill-mode: forwards;
+}
+
+#close:hover{
+	fill:#ff7373;
+	cursor:pointer;
+}
+#minimize:hover{
+	fill:#faff00;
+	cursor:pointer;
+}
+#fullscreen:hover{
+	fill:#59ff8a;
+	cursor:pointer;
+}
+.hovertab{
+	transition:all 0.1s ease-in-out;
+	cursor:pointer;
+	fill:rgba(255,255,255, 0);
+}
+.abacus.hovertab:hover{
+	fill:rgba(255,255,255, 0);
+}
+.hovertab:hover{
+	fill:rgba(255,255,255, 0.7);
+}
+.svgimage{
+	transition:all 0.15s ease-in-out;
+}
+#infotab{
+	top:160px;
+	z-index: 10;
+}
+.itab{
+	position:fixed;
+	left:0px;
+	top:40px;
+	margin-left:-80px;
+	width: 49px;
+	height:auto;
+	background:#e89b73;
+	padding:7px 5px 5px 5px;
+	border-radius: 5px;
+	border-left:15px solid #e89b73;
+	border-right:3px solid #c17852;
+	border-bottom:3px solid #c17852;
+	transition:all 0.2s ease-in-out;
+	cursor:pointer;
+}
+.itab:hover{
+	background:#ffa171;
+	border-left:15px solid #ffa171;
+}
+.itab img{
+	max-width:35px; 
+	margin-left:7px;
+}
+.ibox{
+	position: fixed;
+	padding:30px 20px;
+	top:40px;
+	left:-40%;
+	background:#b16036;
+	width:25%;
+	height:85%;
+	transform:translateX(-50%);
+	border-radius: 5px;
+	border-right:5px solid #c17852;
+	border-bottom:5px solid #c17852;
+	transition:all 0.2s ease-in-out;
+	z-index: 12;
+}
+.infocontainer{
+	position: relative;
+}
+.infocontainer img{
+	position: absolute;
+	right:0px;
+	top:0px;
+	width: 35px;
+	height:auto;
+	cursor:pointer;
+	transition:all 0.25s ease-in-out;
+}
+.infocontainer img:hover{
+	width:37px;
+}
+.abacus.infotext{
+	display: block;
+}
+.infotext{
+	display: none;
+	padding:20px;
+}
+.infotext span{
+	margin-left:10px;
+}
+
+/* -----------------------------------------------
+					SLIDE 3: contact
+------------------------------------------------ */
+#formtitle{
+	font-family: 'din-light', sans-serif;
+	position:absolute;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-weight:100;
+	left:50%;
+	top:85px;
+	color:#fff;
+	transform:translateX(-50%);
+}
+.slidethree{
+	background:#e8cfcf;
+}
+#contactform {
+	position: absolute;
+	width: 700px;
+	height:100vh;
+	padding:0 30px;
+	left:50%;
+	transform:translateX(-50%);
+}
+.contactformbg{
+	background:#fff;
+	opacity:0.15;
+	width: 100%;
+	height:100%
+}
+.formcontainer{
+	position: relative;
+	width: 100%;
+	height:100%;
+	top:-100vh;
+}
+.formcontent{
+	z-index: 2;
+	position: absolute;
+	top:330px;
+	left:50%;
+	width: 100%;
+	transform:translate(-50%,-50%);
+}
+.contactline{
+	margin:40px 45px;
+	position: relative;
+}
+.contactline.movedown{
+	margin-top:90px;
+}
+.contactline.movedown span{
+	top:-19px;
+}
+.contactline span{
+	margin-right:25px;
+	font-size: 18px;
+	text-align: left;
+	position: absolute;
+	left:104px;
+	top:45px;
+}
+.contactline input,
+.contactline textarea{
+	width: 400px;
+	background:none;
+	border:none;
+	border-bottom:1px solid #fff;
+	// position: absolute;
+	left:50%; 
+	transform:translateX(-50%);
+	color:#fff;
+	font-family: 'helvetica', sans-serif;
+	font-weight:100;
+	letter-spacing: 1px;
+	font-size:14px;
+	position: relative;
+}
+.contactline input{
+	font-size:30px;
+	height:35px;
+}
+.contactline input:focus{
+	outline:none;
+}
+.contactline textarea{
+	max-width:400px; 
+	height:200px;
+	border:1px solid #fff;
+}
+#contactship{
+	position: absolute;
+	bottom:120px;
+	width: 45px;
+	left:50%; 
+	transform:translateX(-50%);
+	transform:rotate(90deg);
+	cursor:pointer;
+}
+.successmsg h1{
+	margin-bottom:25px;
+	font-family: 'dinlight', sans-serif;
+	color:#fff;
+}
+.errorbox{
+	position: relative;
+	top:35px;
+}
+/* -----------------------------------------------
+					FOOTER
+------------------------------------------------ */
+.nav.itab{
+	position: fixed;
+	left:0;
+	margin-left:-109px;
+	z-index:4;
+	width: 140px;
+}
+.nav.itab.second{
+	top:100px;
+}
+.nav #ugh{
+	margin-left:13px;
+}
+.nav.itab img{
+	max-width:25px; 
+	position: absolute;
+	margin:5px 0px 0 22px
+}
+.nav span{
+	display: inline-block;
+	margin:13px 0 5px;
+	font-weight: bold;
+	letter-spacing: 1.5px;
+}
+.nav.itab:hover{
+	margin-left:-10px;
+}
+
+/* -----------------------------------------------
+					FOOTER
+------------------------------------------------ */
+#footer{
+	position: fixed;
+	bottom:0;
+	left:0;
+	background: linear-gradient(45deg, rgba(254,166,134,0.8) 0%,rgba(211,86,75,0.3) 100%); 
+	height:50px;
+	z-index:1;
+	width: 100%;
+}
+#footer .footerspan.myemail{
+	margin:20px 0px 10px 10px;
+}
+#footer .footerspan{
+	font-family: 'helvetica', sans-serif;
+	color:#d06e4e;
+	font-size: 12px;
+	font-weight: 400;
+	text-transform: uppercase;
+	display: inline-block;
+	margin:20px 0px 20px 30px;
+}
+.socialicons{
+	float:right;
+	text-align: right;
+	width: 50%;
+	position: relative;
+	padding-right: 30px;
+}
+#footer .fa.fa-envelope-o{
+	margin:10px 1px 0 30px;
+}
+#footer .fa{
+	color:#ffc4b1;
+	font-size:15px;
+	margin:20px 0px 20px 30px;
+	transition:all 0.1s ease-in-out;
+}
+#footer .fa:hover{
+	color:#925e48;
+}
+
+/* -----------------------------------------------
+					ANIMATIONS
+------------------------------------------------ */
+
+@keyframes spaceshipfly {
+  0% {
+    left:15%;
+    top:80px;
+  }
+  15%,90%{
+  	transform:rotate(90deg);
+  }
+  100%{
+  	transform:rotate(0deg);
+  	left:70%;
+  	top:150px;
+  	width: 50px;
+  	height:126px;
+  }
+}
+
+@keyframes shiplanding{
+	0%{
+		top:150px;
+	}
+	25%{
+		top:165px;
+	}
+	50%{
+		top:155px;
+	}
+	75%{
+		top:160px;
+	}
+	100%{
+		top:175px;
+	}
+}
+
+@keyframes planetmove{
+	100%{
+		left:-20%;
+		width: 120px;
+		height:120px;
+	}
+}
+
+@keyframes planetzoom{
+	100%{
+		width: 550px;
+		height: 550px;
+		right:55%;
+		top:200px;
+	}
+}
+
+@keyframes spaceshipzoom{
+	100%{
+		left:17%;
+		width: 100px;
+		height:250px;
+		top: 60px;
+	}
+}
+
+@keyframes astrolanding{
+	25%{
+		top:125px;
+	}
+	35%{
+		top:133px;
+	}
+	50%{
+		top:128px;
+	}
+	60%{
+		top:133px;
+	}
+	75%{
+		top:160px;
+		left:18.5%;
+	}
+	85%{
+		left:22.5%;
+	}
+	100%{
+		top:177px;
+		left:24%;
+	}
+
+}
+@keyframes nameanim{
+	100%{
+		top: 48px;
+	}
+}
+@keyframes ufoanim{
+	100%{
+		top:80px;
+		height:66px;
+	}
+}
+@keyframes abducted{
+	0%{
+		left:24%;
+	}
+	90%{
+		top:140px;
+		height:12px;
+		width: 11px;
+	}
+	100%{
+		left:25.8%;
+		top:122px;
+		height:0;
+		width: 0;
+	}
+}
+
+@keyframes ufofly{
+	0%{
+		top:80px;
+		height:66px;
+	}
+	100%{
+		left:40%;
+		top:22px;
+		height:3px;
+	}
+}
+
+@keyframes firefoxanim{
+	100%{
+		top:50%;
+		right:60%;
+	}
+}
+
+@keyframes chromeanim{
+	100%{
+		top:50%;
+		right:38%;
+	}
+}
+
+@keyframes pulse {
+  from {
+    top:50%
+  }
+  15%{
+  	top:51%;
+  }
+  25% {
+    top:50%;
+  }
+  50%{
+	top:51.5%;
+  }
+  75%{
+  	top:50%;
+  }
+  90%{
+  	top:50.5%;
+  }
+  to {
+	top:50%;
+  }
+}
+
+@keyframes popin{
+	0{
+		width: 0%;
+	}
+	60%{
+		width:70%;
+	}
+	80%{
+		width:73%;
+	}
+	100%{
+		width: 70%;
+	}
+}
+
+
+
+
