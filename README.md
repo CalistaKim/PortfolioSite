@@ -1,2 +1,2 @@
 # PortfolioSite
-# files uploaded purely for source code review; 
+# files uploaded for source code review
